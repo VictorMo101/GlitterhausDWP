@@ -4,25 +4,34 @@ $pageTitle = $movie
     : 'Movie not found - Glimmerhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 ?>
-        <a href="index.php?page=home">Back to home</a>
+        <a class="back-link" href="index.php?page=home">&larr; Back to movies</a>
     <?php if (!$movie): ?>
-        <h2>Movie not found</h2>
-        <p>The movie you requested is not available.</p>
+        <section class="empty-state">
+            <h1>Movie not found</h1>
+            <p>The movie you requested is not available.</p>
+        </section>
     <?php else: ?>
-        <article>
+        <article class="detail-card">
             <?php if (!empty($movie['posterUrl'])): ?>
-                <img src="<?= htmlspecialchars($movie['posterUrl'], ENT_QUOTES, 'UTF-8') ?>"
-                     alt="Poster for <?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?>"
-                     width="300">
+                <div class="detail-poster">
+                    <img src="<?= htmlspecialchars($movie['posterUrl'], ENT_QUOTES, 'UTF-8') ?>"
+                         alt="Poster for <?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?>">
+                </div>
             <?php endif; ?>
-            <h2><?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?></h2>
-            <p>
-                <?= (int) $movie['durationMinutes'] ?> minutes
+            <div class="detail-content">
+                <p class="eyebrow">Now showing</p>
+                <h1><?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?></h1>
+                <p class="movie-meta">
+                    <?= (int) $movie['durationMinutes'] ?> min
                 <?php if ($movie['ageRating']): ?>
                     · Rated <?= htmlspecialchars($movie['ageRating'], ENT_QUOTES, 'UTF-8') ?>
                 <?php endif; ?>
-            </p>
-            <p><?= htmlspecialchars($movie['description'] ?? '', ENT_QUOTES, 'UTF-8') ?></p>
+                </p>
+                <div class="description">
+                    <h2>About the movie</h2>
+                    <p><?= htmlspecialchars($movie['description'] ?? '', ENT_QUOTES, 'UTF-8') ?></p>
+                </div>
+            </div>
         </article>
     <?php endif; ?>
 <?php require __DIR__ . '/../../includes/footer.php'; ?>

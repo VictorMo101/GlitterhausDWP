@@ -2,22 +2,29 @@
 $pageTitle = 'Glimmerhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 ?>
-    <h2>Now showing</h2>
+    <section class="page-heading">
+        <p class="eyebrow">Your next night out</p>
+        <h1>Now showing</h1>
+        <p>Discover something worth watching at Glimmerhaus Cinema.</p>
+    </section>
     <?php if (empty($movies)): ?>
-        <p>No movies are currently available.</p>
+        <div class="empty-state">
+            <p>No movies are currently available.</p>
+        </div>
     <?php else: ?>
-        <section>
+        <section class="movie-grid">
             <?php foreach ($movies as $movie): ?>
-                <a href="index.php?page=movieDetails&amp;movieId=<?= (int) $movie['movieId'] ?>">
-                    <article>
+                <a class="movie-link" href="index.php?page=movieDetails&amp;movieId=<?= (int) $movie['movieId'] ?>">
+                    <article class="movie-card">
                         <?php if (!empty($movie['posterUrl'])): ?>
-                            <img src="<?= htmlspecialchars($movie['posterUrl'], ENT_QUOTES, 'UTF-8') ?>"
-                                 alt="Poster for <?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?>"
-                                 width="180">
+                            <div class="poster-wrap">
+                                <img src="<?= htmlspecialchars($movie['posterUrl'], ENT_QUOTES, 'UTF-8') ?>"
+                                     alt="Poster for <?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?>">
+                            </div>
                         <?php endif; ?>
                         <h3><?= htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') ?></h3>
-                        <p>
-                            <?= (int) $movie['durationMinutes'] ?> minutes
+                        <p class="movie-meta">
+                            <?= (int) $movie['durationMinutes'] ?> min
                             <?php if ($movie['ageRating']): ?>
                                 · Rated <?= htmlspecialchars($movie['ageRating'], ENT_QUOTES, 'UTF-8') ?>
                             <?php endif; ?>
