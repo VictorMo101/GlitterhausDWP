@@ -12,6 +12,7 @@ $movies = new MovieController(new Movie($connection));
 
 $routes = [
     'home' => [$movies, 'home'],
+    'movieDetails' => [$movies, 'movieDetails'],
     'login' => [$auth, 'login'],
     'register' => [$auth, 'register'],
     'logout' => [$auth, 'logout']
