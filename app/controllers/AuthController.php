@@ -3,13 +3,8 @@
 class AuthController {
     private $user;
 
-    // Receives the User model so the controller can access user-related database functions.
     public function __construct($user) {
         $this->user = $user;
-    }
-
-    public function home() {
-        require __DIR__ . '/../views/home.php';
     }
 
     public function login() {
