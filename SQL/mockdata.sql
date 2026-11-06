@@ -2,28 +2,28 @@
 USE GlimmerHausDB;
 
 INSERT INTO users (userId, username, email, passwordHash, isAdmin) VALUES
-(1, 'admin', 'admin@example.com', '$2b$10$PtYgjmUhBel31iEl2hpChYgCfrL1spNxnyVmihA/2O76UMFxFkM/R', 1),
-(2, 'mette_h', 'mette_h@example.com', '$2b$10$5Kjp1vRt.1fjORS/6ilI8ihN5KXSc7Tvo/hBKqFYY/kv5ZJr3J1TW', 0),
-(3, 'jonas.k', 'jonask@example.com', '$2b$10$DtkwtDDb.xHKas1VOqg6YYZYn9ZhyiA4uoRgnatmUdjAWtGSU8po.', 0),
-(4, 'sofie_n', 'sofie_n@example.com', '$2b$10$799NksnRH9ucAUsdMlHUvTCQCyEZDz/TddJ8HyS5SUkCnD8zRA9a9', 0),
-(5, 'lars_p', 'lars_p@example.com', '$2b$10$SkpXz9w3QlY7Zkuvqdt7s8Stqcbnr3yBdGBLEPH1qhT61qtc4xatw', 0),
-(6, 'ida_m', 'ida_m@example.com', '$2b$10$s8phP9nhFyJfm5di4PzJ59FHz5r1pY4OjE2jBMptUsGr7CmY.uCu3', 0),
-(7, 'anders_b', 'anders_b@example.com', '$2b$10$ZR1zTOlUcR64cXQLioDnkHIfxIq2HZt/PlJhx2jIclHkCiHp6bR1I', 0),
-(8, 'freja_s', 'freja_s@example.com', '$2b$10$qfEouHgxzNNAL5wIScGebcy8F5n3/YNBDRzrZSgqbjG3uhkWKFLf6', 0);
+(1, 'admin', 'admin@example.com', '$2y$10$RuCYs20l0pOUoEqoTeFg2ewBx0fsSfmQf4HEe/r.pCh4lNFWuACJG', 1),
+(2, 'mette_h', 'mette_h@example.com', '$2y$10$84qjRDSedaH7DGYiDswNDujuUAi/ny96.uds12hNlYsSVAm2TxDYC', 0),
+(3, 'jonas.k', 'jonask@example.com', '$2y$10$cZgdbHbsFNthIq7e44ikCuAJTA6yKYLwNxd7/mpCDZ3m3dAoCkpsa', 0),
+(4, 'sofie_n', 'sofie_n@example.com', '$2y$10$VOtpcwwrrv2d5/wo1HRrJOTlXPNK8f3tnyrHurmi5mXl8GuAZjSpe', 0),
+(5, 'lars_p', 'lars_p@example.com', '$2y$10$r8OMrg1psDkKAs0C2.iKm.qq5jBC80U.xEhWvPV0ycSpXtxZIwTP2', 0),
+(6, 'ida_m', 'ida_m@example.com', '$2y$10$Rg8nJ6Uy.AVcUwWLRxDjfu34P9EMZMNKqbi/7K72v2VKI5uHZTktm', 0),
+(7, 'anders_b', 'anders_b@example.com', '$2y$10$J9SYln45JZqIfPNsDYLDj.BsXNWE75v/ps0Rfn5KlZ9KcvO5b19Oe', 0),
+(8, 'freja_s', 'freja_s@example.com', '$2y$10$Pc/pF6YZOt39Q3yE63xmbeDkXEDzKiSNu.9Hk5bZJ3HbfygKhqZLy', 0);
 
 INSERT INTO movies (movieId, title, description, durationMinutes, ageRatingId, posterUrl, isActive) VALUES
-(1, 'Midnight Lanterns', 'A lighthouse keeper discovers that the lamp he tends guides more than ships.', 112, 3, 'https://example.com/posters/1.jpg', 1),
-(2, 'Copper Skies', 'Two rival pilots race across a continent to deliver a vaccine.', 128, 3, 'https://example.com/posters/2.jpg', 1),
-(3, 'The Last Orchard', 'A family fights to save the final apple orchard in a changing valley.', 98, 2, 'https://example.com/posters/3.jpg', 1),
-(4, 'Neon Harbor', 'A retired detective is pulled back in when a cargo ship vanishes.', 121, 4, 'https://example.com/posters/4.jpg', 1),
-(5, 'Pocket Dragons', 'Three kids hatch tiny dragons and must hide them from their school.', 92, 1, 'https://example.com/posters/5.jpg', 1),
-(6, 'Static Bloom', 'Radio signals from deep space begin to rewrite a small town.', 134, 3, 'https://example.com/posters/6.jpg', 1),
-(7, 'Dust & Diamonds', 'A gambler and a sheriff share one desperate night in a frontier town.', 117, 4, 'https://example.com/posters/7.jpg', 1),
-(8, 'Whisper Hollow', 'A family moves into a house where the walls remember everything.', 104, 4, 'https://example.com/posters/8.jpg', 1),
-(9, 'Paris, Eventually', 'Two strangers keep missing each other across a decade of trains.', 101, 2, 'https://example.com/posters/9.jpg', 1),
-(10, 'Salt Roads', 'A documentary following traders across the last caravan routes of the Sahara.', 89, 1, 'https://example.com/posters/10.jpg', 1),
-(11, 'Orbit Zero', 'A stranded crew has 72 hours of oxygen and one working radio.', 138, 3, 'https://example.com/posters/11.jpg', 1),
-(12, 'Old Tricks', 'A retired magician is blackmailed into one final heist.', 109, 3, 'https://example.com/posters/12.jpg', 0);
+(1, 'Midnight Lanterns', 'A lighthouse keeper discovers that the lamp he tends guides more than ships.', 112, 3, 'https://picsum.photos/seed/glimmerhaus1/400/600', 1),
+(2, 'Copper Skies', 'Two rival pilots race across a continent to deliver a vaccine.', 128, 3, 'https://picsum.photos/seed/glimmerhaus2/400/600', 1),
+(3, 'The Last Orchard', 'A family fights to save the final apple orchard in a changing valley.', 98, 2, 'https://picsum.photos/seed/glimmerhaus3/400/600', 1),
+(4, 'Neon Harbor', 'A retired detective is pulled back in when a cargo ship vanishes.', 121, 4, 'https://picsum.photos/seed/glimmerhaus4/400/600', 1),
+(5, 'Pocket Dragons', 'Three kids hatch tiny dragons and must hide them from their school.', 92, 1, 'https://picsum.photos/seed/glimmerhaus5/400/600', 1),
+(6, 'Static Bloom', 'Radio signals from deep space begin to rewrite a small town.', 134, 3, 'https://picsum.photos/seed/glimmerhaus6/400/600', 1),
+(7, 'Dust & Diamonds', 'A gambler and a sheriff share one desperate night in a frontier town.', 117, 4, 'https://picsum.photos/seed/glimmerhaus7/400/600', 1),
+(8, 'Whisper Hollow', 'A family moves into a house where the walls remember everything.', 104, 4, 'https://picsum.photos/seed/glimmerhaus8/400/600', 1),
+(9, 'Paris, Eventually', 'Two strangers keep missing each other across a decade of trains.', 101, 2, 'https://picsum.photos/seed/glimmerhaus9/400/600', 1),
+(10, 'Salt Roads', 'A documentary following traders across the last caravan routes of the Sahara.', 89, 1, 'https://picsum.photos/seed/glimmerhaus10/400/600', 1),
+(11, 'Orbit Zero', 'A stranded crew has 72 hours of oxygen and one working radio.', 138, 3, 'https://picsum.photos/seed/glimmerhaus11/400/600', 1),
+(12, 'Old Tricks', 'A retired magician is blackmailed into one final heist.', 109, 3, 'https://picsum.photos/seed/glimmerhaus12/400/600', 0);
 
 INSERT INTO movieGenres (movieId, genreId) VALUES
 (1, 7),

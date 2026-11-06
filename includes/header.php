@@ -16,6 +16,7 @@ $pageTitle = $pageTitle ?? 'Glimmerhaus Cinema';
         <nav class="site-nav">
             <a href="index.php?page=home">Home</a>
         <?php if (logged_in()): ?>
+            <a href="index.php?page=bookings">My bookings</a>
             <span>Welcome, <?= htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8') ?></span>
             <form action="index.php?page=logout" method="post">
                 <button class="button button-small" type="submit">Log out</button>
