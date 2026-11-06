@@ -1,3 +1,7 @@
+<?php
+$pageTitle = 'Register - Glimmerhaus Cinema';
+require __DIR__ . '/../../includes/header.php';
+?>
 <h2>Create New User</h2>
 
 <?php if ($message): ?>
@@ -14,5 +18,4 @@ Password:
 </form>
 <p><a href="index.php?page=login">Log in</a></p>
 
-</body>
-</html>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>

@@ -1,16 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $movie ? htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8') : 'Movie not found' ?> - Glimmerhaus Cinema</title>
-</head>
-<body>
-<header>
-    <h1>Glimmerhaus Cinema</h1>
-    <a href="index.php?page=home">Back to home</a>
-</header>
-
-<main>
+<?php
+$pageTitle = $movie
+    ? $movie['title'] . ' - Glimmerhaus Cinema'
+    : 'Movie not found - Glimmerhaus Cinema';
+require __DIR__ . '/../../includes/header.php';
+?>
+        <a href="index.php?page=home">Back to home</a>
     <?php if (!$movie): ?>
         <h2>Movie not found</h2>
         <p>The movie you requested is not available.</p>
@@ -31,6 +25,4 @@
             <p><?= htmlspecialchars($movie['description'] ?? '', ENT_QUOTES, 'UTF-8') ?></p>
         </article>
     <?php endif; ?>
-</main>
-</body>
-</html>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>

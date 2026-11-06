@@ -1,24 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Glimmerhaus Cinema</title>
-</head>
-<body>
-<header>
-    <h1>Glimmerhaus Cinema</h1>
-    <?php if (logged_in()): ?>
-        <span>Welcome, <?= htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8') ?></span>
-        <form action="index.php?page=logout" method="post">
-            <button type="submit">Log out</button>
-        </form>
-    <?php else: ?>
-        <a href="index.php?page=login">Log in</a>
-        <a href="index.php?page=register">Register</a>
-    <?php endif; ?>
-</header>
-
-<main>
+<?php
+$pageTitle = 'Glimmerhaus Cinema';
+require __DIR__ . '/../../includes/header.php';
+?>
     <h2>Now showing</h2>
     <?php if (empty($movies)): ?>
         <p>No movies are currently available.</p>
@@ -44,6 +27,4 @@
             <?php endforeach; ?>
         </section>
     <?php endif; ?>
-</main>
-</body>
-</html>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>
