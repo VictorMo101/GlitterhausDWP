@@ -50,7 +50,7 @@ require __DIR__ . '/../../includes/header.php';
                         <div class="showtime-list">
                             <?php foreach ($dateScreenings as $screening): ?>
                                 <a class="button showtime-button"
-                                   href="makeBooking.php?screeningId=<?= (int) $screening['screeningId'] ?>">
+                                   href="index.php?page=movieBooking&amp;screeningId=<?= (int) $screening['screeningId'] ?>">
                                     <span class="showtime-auditorium"><?= htmlspecialchars($screening['auditoriumName'], ENT_QUOTES, 'UTF-8') ?></span>
                                     <strong><?= htmlspecialchars(date('g:i A', strtotime($screening['startsAt'])), ENT_QUOTES, 'UTF-8') ?></strong>
                                     <span class="showtime-meta"><?= htmlspecialchars(date('M j', strtotime($screening['startsAt'])), ENT_QUOTES, 'UTF-8') ?></span>

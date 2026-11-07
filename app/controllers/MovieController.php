@@ -25,4 +25,8 @@ class MovieController {
         $screenings = $this->movie->getScreeningsByMovieId($movieId);
         require __DIR__ . '/../views/movieDetails.php';
     }
+
+    public function movieBooking() {
+        require __DIR__ . '/../views/movieBooking.php';
+    }
 }

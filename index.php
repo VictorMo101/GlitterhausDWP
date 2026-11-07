@@ -16,6 +16,7 @@ $bookings = new BookingController(new Booking($connection));
 $routes = [
     'home' => [$movies, 'home'],
     'movieDetails' => [$movies, 'movieDetails'],
+    'movieBooking' => [$movies, 'movieBooking'],
     'bookings' => [$bookings, 'index'],
     'login' => [$auth, 'login'],
     'register' => [$auth, 'register'],
