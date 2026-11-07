@@ -41,8 +41,8 @@ require __DIR__ . '/../../includes/header.php';
                             <dd><?= htmlspecialchars($booking['auditoriumName'], ENT_QUOTES, 'UTF-8') ?></dd>
                         </div>
                         <div>
-                            <dt>Seats</dt>
-                            <dd><?= (int) $booking['seatCount'] ?></dd>
+                            <dt>Booked seats</dt>
+                            <dd><?= htmlspecialchars($booking['seatNames'] ?? 'None', ENT_QUOTES, 'UTF-8') ?></dd>
                         </div>
                         <div>
                             <dt>Total</dt>

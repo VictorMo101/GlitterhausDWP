@@ -11,13 +11,20 @@ class Booking {
         $query = "SELECT bookings.bookingId, bookings.createdAt, bookings.totalPrice,
                          movies.title, movies.posterUrl, screenings.startsAt,
                          screenings.endsAt, auditoriums.name AS auditoriumName,
-                         COUNT(bookingSeats.bookingSeatId) AS seatCount
+                         COUNT(bookingSeats.bookingSeatId) AS seatCount,
+                         GROUP_CONCAT(
+                             CONCAT(seats.rowLabel, seats.seatNumber)
+                             ORDER BY seats.rowLabel, seats.seatNumber
+                             SEPARATOR ', '
+                         ) AS seatNames
                   FROM bookings
                   INNER JOIN screenings ON screenings.screeningId = bookings.screeningId
                   INNER JOIN movies ON movies.movieId = screenings.movieId
                   INNER JOIN auditoriums ON auditoriums.auditoriumId = screenings.auditoriumId
                   LEFT JOIN bookingSeats ON bookingSeats.bookingId = bookings.bookingId
                       AND bookingSeats.screeningId = bookings.screeningId
+                  LEFT JOIN seats ON seats.seatId = bookingSeats.seatId
+                      AND seats.auditoriumId = screenings.auditoriumId
                   WHERE bookings.userId = :userId
                   GROUP BY bookings.bookingId, bookings.createdAt, bookings.totalPrice,
                            movies.title, movies.posterUrl, screenings.startsAt,
