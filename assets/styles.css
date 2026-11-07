@@ -536,6 +536,75 @@ input:focus {
     border-radius: 0.2rem;
 }
 
+form.seat-booking-form {
+    display: block;
+}
+
+.seat-booking-form .alert {
+    margin-bottom: 1rem;
+}
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.seat-selection-panel {
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: var(--surface);
+    font-family: Arial, sans-serif;
+}
+
+.seat-selection-panel h2 {
+    margin: 0 0 1rem;
+    font: bold 1rem Georgia, serif;
+}
+
+.ticket-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+}
+
+.ticket-counter div:first-child {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.ticket-counter span,
+.selection-help {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.counter-controls {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.selection-help {
+    line-height: 1.4;
+}
+
+.selection-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.seat-selection-panel .button {
+    width: 100%;
+    padding: 0.65rem 0.5rem;
+}
+
 .seat-map {
     display: grid;
     gap: 0.8rem;
@@ -604,6 +673,11 @@ input:focus {
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
+.seat {
+    z-index: 1;
+    cursor: pointer;
+}
+
 .seat::after {
     position: absolute;
     right: 0.25rem;
@@ -626,9 +700,36 @@ input:focus {
     background: #75c982;
 }
 
+.seat-selected {
+    color: #22170f;
+    background: var(--accent);
+}
+
 .seat-unavailable {
     color: #f7e1e1;
     background: #a64c4c;
+}
+
+.seat-control {
+    width: 1rem;
+    height: 1rem;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+    color: var(--ink);
+    background: var(--surface-light);
+    cursor: pointer;
+    font: bold 0.75rem/1 Arial, sans-serif;
+}
+
+.seat-control:hover {
+    background: var(--accent-dark);
+}
+
+.seat-control:disabled,
+.seat-selection-panel .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
 footer {
@@ -700,6 +801,10 @@ footer .page-container {
     .seat-map {
         padding-right: 0.35rem;
         padding-left: 0.35rem;
+    }
+
+    .booking-layout {
+        grid-template-columns: 1fr;
     }
 
     .booking-card {
