@@ -15,12 +15,14 @@ class MovieController {
     public function movieDetails() {
         $movieId = filter_input(INPUT_GET, 'movieId', FILTER_VALIDATE_INT);
         $movie = $movieId ? $this->movie->getActiveMovieById($movieId) : false;
-        $screenings = $movie ? $this->movie->getScreeningsByMovieId($movieId) : [];
 
         if (!$movie) {
             http_response_code(404);
+            require __DIR__ . '/../views/404.php';
+            exit;
         }
 
+        $screenings = $this->movie->getScreeningsByMovieId($movieId);
         require __DIR__ . '/../views/movieDetails.php';
     }
 }
