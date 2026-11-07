@@ -37,8 +37,9 @@ header {
 
 .site-header,
 .page-container {
-    width: min(1120px, calc(100% - 2rem));
+    width: min(1200px, calc(100% - 2rem));
     margin: 0 auto;
+
 }
 
 .site-header {
@@ -194,7 +195,10 @@ h1 {
 }
 
 .back-link {
-    display: inline-block;
+    display: block;
+    width: min(100%, 950px);
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 2rem;
     font-family: Arial, sans-serif;
     font-size: 0.9rem;
@@ -206,6 +210,8 @@ h1 {
     gap: clamp(2rem, 6vw, 5rem);
     align-items: center;
     max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
     padding: 2rem;
     border: 1px solid var(--border);
     border-radius: 1rem;
@@ -298,7 +304,7 @@ input:focus {
 .showtimes {
     display: block;
     max-width: 950px;
-    margin-top: 1.5rem;
+    margin: 1.5rem auto 0;
     padding: 1.5rem;
 }
 
