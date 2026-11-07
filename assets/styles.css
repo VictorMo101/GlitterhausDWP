@@ -414,19 +414,6 @@ input:focus {
     margin-bottom: 0.35rem;
 }
 
-.status {
-    border-radius: 999px;
-    padding: 0.3rem 0.7rem;
-    color: #22170f;
-    background: var(--accent);
-    font: bold 0.75rem Arial, sans-serif;
-}
-
-.status-cancelled {
-    color: var(--ink);
-    background: #6f4848;
-}
-
 .booking-details {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -498,11 +485,6 @@ footer .page-container {
 
     .booking-heading {
         display: block;
-    }
-
-    .booking-heading .status {
-        display: inline-block;
-        margin-top: 0.75rem;
     }
 
     .booking-details {

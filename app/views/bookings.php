@@ -30,9 +30,6 @@ require __DIR__ . '/../../includes/header.php';
                             <p class="eyebrow">Booking #<?= (int) $booking['bookingId'] ?></p>
                             <h2><?= htmlspecialchars($booking['title'], ENT_QUOTES, 'UTF-8') ?></h2>
                         </div>
-                        <span class="status status-<?= htmlspecialchars($booking['status'], ENT_QUOTES, 'UTF-8') ?>">
-                            <?= htmlspecialchars(ucfirst($booking['status']), ENT_QUOTES, 'UTF-8') ?>
-                        </span>
                     </div>
                     <dl class="booking-details">
                         <div>
