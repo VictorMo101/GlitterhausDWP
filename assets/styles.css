@@ -316,14 +316,78 @@ input:focus {
 }
 
 .showtime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    display: flex;
     gap: 0.5rem;
+    width: 100%;
+}
+
+.showtime-grid--full {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.showtime-carousel {
+    position: relative;
+}
+
+.showtime-viewport {
     overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+.showtime-viewport::-webkit-scrollbar {
+    display: none;
 }
 
 .showtime-day {
+    flex: 0 0 calc((100% - 2rem) / 5);
     min-width: 0;
+    scroll-snap-align: start;
+}
+
+.showtime-grid--full .showtime-day {
+    width: auto;
+}
+
+.showtime-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0 0.2rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--ink);
+    background: rgba(21, 19, 19, 0.9);
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    transform: translateY(-50%);
+}
+
+.showtime-arrow:hover {
+    color: var(--ink);
+    background: var(--surface-light);
+}
+
+.showtime-arrow-left {
+    left: -1rem;
+}
+
+.showtime-arrow-right {
+    right: -1rem;
+}
+
+.showtime-arrow[hidden] {
+    display: none;
 }
 
 .showtime-day h3 {
@@ -474,8 +538,21 @@ footer .page-container {
         padding: 1rem;
     }
 
-    .showtime-grid {
-        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    .showtime-day {
+        flex-basis: calc((100% - 0.5rem) / 2);
+        min-width: 105px;
+    }
+
+    .showtime-grid--full {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .showtime-arrow-left {
+        left: -0.5rem;
+    }
+
+    .showtime-arrow-right {
+        right: -0.5rem;
     }
 
     .booking-card {
