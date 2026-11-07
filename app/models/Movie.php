@@ -30,4 +30,18 @@ class Movie {
 
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getScreeningsByMovieId($movieId) {
+        $query = "SELECT screeningId, startsAt, endsAt, ticketPrice,
+                         auditoriums.name AS auditoriumName
+                  FROM screenings
+                  INNER JOIN auditoriums ON auditoriums.auditoriumId = screenings.auditoriumId
+                  WHERE screenings.movieId = :movieId
+                  ORDER BY screenings.startsAt";
+        $statement = $this->connection->prepare($query);
+        $statement->execute(['movieId' => $movieId]);
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

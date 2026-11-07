@@ -115,26 +115,14 @@ CREATE TABLE screenings (
     UNIQUE (screeningId, auditoriumId)
 );
 
-CREATE TABLE bookingStatuses (
-    statusId INT AUTO_INCREMENT PRIMARY KEY,
-    statusName VARCHAR(50) NOT NULL UNIQUE
-);
-
-INSERT INTO bookingStatuses (statusName)
-VALUES
-('confirmed'),
-('cancelled');
-
 CREATE TABLE bookings (
     bookingId INT AUTO_INCREMENT PRIMARY KEY,
     userId INT NOT NULL,
     screeningId INT NOT NULL,
-    statusId INT NOT NULL DEFAULT 1,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     totalPrice DECIMAL(8,2) NOT NULL,
     FOREIGN KEY (userId) REFERENCES users(userId) ON DELETE RESTRICT,
     FOREIGN KEY (screeningId) REFERENCES screenings(screeningId) ON DELETE RESTRICT,
-    FOREIGN KEY (statusId) REFERENCES bookingStatuses(statusId) ON DELETE RESTRICT,
     UNIQUE (bookingId, screeningId)
 );
 

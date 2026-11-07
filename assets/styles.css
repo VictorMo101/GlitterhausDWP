@@ -37,8 +37,9 @@ header {
 
 .site-header,
 .page-container {
-    width: min(1120px, calc(100% - 2rem));
+    width: min(1200px, calc(100% - 2rem));
     margin: 0 auto;
+
 }
 
 .site-header {
@@ -194,7 +195,10 @@ h1 {
 }
 
 .back-link {
-    display: inline-block;
+    display: block;
+    width: min(100%, 950px);
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 2rem;
     font-family: Arial, sans-serif;
     font-size: 0.9rem;
@@ -206,6 +210,8 @@ h1 {
     gap: clamp(2rem, 6vw, 5rem);
     align-items: center;
     max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
     padding: 2rem;
     border: 1px solid var(--border);
     border-radius: 1rem;
@@ -295,6 +301,437 @@ input:focus {
     text-align: center;
 }
 
+.showtimes {
+    display: block;
+    max-width: 950px;
+    margin: 1.5rem auto 0;
+    padding: 1.5rem;
+}
+
+.showtimes-heading {
+    margin-bottom: 1.5rem;
+}
+
+.showtimes-heading h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.showtimes > .empty-state {
+    margin: 0;
+}
+
+.showtime-grid {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.showtime-grid--full {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.showtime-carousel {
+    position: relative;
+}
+
+.showtime-viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+.showtime-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.showtime-day {
+    flex: 0 0 calc((100% - 2rem) / 5);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.showtime-grid--full .showtime-day {
+    width: auto;
+}
+
+.showtime-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0 0.2rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--ink);
+    background: rgba(21, 19, 19, 0.9);
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    transform: translateY(-50%);
+}
+
+.showtime-arrow:hover {
+    color: var(--ink);
+    background: var(--surface-light);
+}
+
+.showtime-arrow-left {
+    left: -1rem;
+}
+
+.showtime-arrow-right {
+    right: -1rem;
+}
+
+.showtime-arrow[hidden] {
+    display: none;
+}
+
+.showtime-day h3 {
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+    font: bold 0.85rem Arial, sans-serif;
+    text-align: center;
+}
+
+.showtime-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.showtime-button {
+    display: flex;
+    min-height: 5.1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.4rem;
+    color: #102617;
+    background: #75c982;
+    text-align: center;
+}
+
+.showtime-button:hover {
+    color: #102617;
+    background: #9be0a4;
+}
+
+.showtime-auditorium,
+.showtime-meta {
+    font-size: 0.75rem;
+}
+
+.showtime-button strong {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.showtime-meta {
+    display: none;
+}
+
+.booking-list {
+    display: grid;
+    gap: 1rem;
+    max-width: 900px;
+}
+
+.booking-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--surface);
+}
+
+.booking-poster {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 0.35rem;
+    background: var(--surface-light);
+}
+
+.booking-poster img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.booking-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.booking-heading h2 {
+    margin: 0;
+}
+
+.booking-heading .eyebrow {
+    margin-bottom: 0.35rem;
+}
+
+.booking-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.25rem 0 0;
+}
+
+.booking-details dt {
+    color: var(--muted);
+    font: 0.7rem Arial, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.booking-details dd {
+    margin: 0.25rem 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.booking-seat-card {
+    display: block;
+    max-width: 760px;
+}
+
+.booking-seat-heading h1 {
+    margin-bottom: 0.25rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.seat-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0 1.5rem;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+}
+
+.seat-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.seat-legend-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 0.2rem;
+}
+
+form.seat-booking-form {
+    display: block;
+}
+
+.seat-booking-form .alert {
+    margin-bottom: 1rem;
+}
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.seat-selection-panel {
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: var(--surface);
+    font-family: Arial, sans-serif;
+}
+
+.seat-selection-panel h2 {
+    margin: 0 0 1rem;
+    font: bold 1rem Georgia, serif;
+}
+
+.ticket-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+}
+
+.ticket-counter div:first-child {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.ticket-counter span,
+.selection-help {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.counter-controls {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.selection-help {
+    line-height: 1.4;
+}
+
+.selection-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.seat-selection-panel .button {
+    width: 100%;
+    padding: 0.65rem 0.5rem;
+}
+
+.seat-map {
+    display: grid;
+    gap: 0.8rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: radial-gradient(ellipse at center, rgba(232, 164, 92, 0.08), transparent 65%),
+        var(--background);
+    overflow: hidden;
+}
+
+.screen-label {
+    width: min(80%, 34rem);
+    margin: 0 auto 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 50% 50% 0.4rem 0.4rem;
+    padding: 0.45rem 1rem 0.65rem;
+    color: var(--muted);
+    background: linear-gradient(180deg, rgba(232, 164, 92, 0.2), rgba(232, 164, 92, 0.03));
+    box-shadow: 0 0 1.5rem rgba(232, 164, 92, 0.2);
+    font: bold 0.75rem Arial, sans-serif;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    margin: 0 auto;
+    transform: perspective(35rem) rotateX(2deg);
+}
+
+.seat-row:nth-child(1) {
+    transform: perspective(35rem) rotateX(2deg) scale(0.82);
+}
+
+.seat-row:nth-child(2) {
+    transform: perspective(35rem) rotateX(2deg) scale(0.88);
+}
+
+.seat-row:nth-child(3) {
+    transform: perspective(35rem) rotateX(2deg) scale(0.94);
+}
+
+.seat-row-label {
+    width: 1.25rem;
+    color: var(--muted);
+    font: bold 0.8rem Arial, sans-serif;
+    text-align: center;
+}
+
+.seat {
+    display: grid;
+    position: relative;
+    width: 2.25rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid rgba(16, 38, 23, 0.25);
+    border-radius: 0.55rem 0.55rem 0.35rem 0.35rem;
+    color: #102617;
+    font: bold 0.75rem Arial, sans-serif;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.seat {
+    z-index: 1;
+    cursor: pointer;
+}
+
+.seat::after {
+    position: absolute;
+    right: 0.25rem;
+    bottom: -0.25rem;
+    left: 0.25rem;
+    height: 0.35rem;
+    border-radius: 0 0 0.35rem 0.35rem;
+    background: inherit;
+    content: "";
+    filter: brightness(0.8);
+}
+
+.seat:hover {
+    z-index: 1;
+    filter: brightness(1.1);
+    transform: translateY(-0.15rem);
+}
+
+.seat-available {
+    background: #75c982;
+}
+
+.seat-selected {
+    color: #22170f;
+    background: var(--accent);
+}
+
+.seat-unavailable {
+    color: #f7e1e1;
+    background: #a64c4c;
+}
+
+.seat-control {
+    width: 1rem;
+    height: 1rem;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+    color: var(--ink);
+    background: var(--surface-light);
+    cursor: pointer;
+    font: bold 0.75rem/1 Arial, sans-serif;
+}
+
+.seat-control:hover {
+    background: var(--accent-dark);
+}
+
+.seat-control:disabled,
+.seat-selection-panel .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 footer {
     border-top: 1px solid var(--border);
     color: var(--muted);
@@ -329,5 +766,57 @@ footer .page-container {
 
     .detail-poster {
         max-width: 280px;
+    }
+
+    .showtimes {
+        padding: 1rem;
+    }
+
+    .showtime-day {
+        flex-basis: calc((100% - 0.5rem) / 2);
+        min-width: 105px;
+    }
+
+    .showtime-grid--full {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .showtime-arrow-left {
+        left: -0.5rem;
+    }
+
+    .showtime-arrow-right {
+        right: -0.5rem;
+    }
+
+    .seat-row {
+        gap: 0.3rem;
+    }
+
+    .seat {
+        width: 1.7rem;
+        height: 1.6rem;
+    }
+
+    .seat-map {
+        padding-right: 0.35rem;
+        padding-left: 0.35rem;
+    }
+
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        grid-template-columns: 60px 1fr;
+        gap: 1rem;
+    }
+
+    .booking-heading {
+        display: block;
+    }
+
+    .booking-details {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

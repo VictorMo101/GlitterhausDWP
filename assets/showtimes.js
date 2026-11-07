@@ -1,0 +1,24 @@
+document.querySelectorAll('[data-showtime-carousel]').forEach((carousel) => {
+    const viewport = carousel.querySelector('[data-showtime-viewport]');
+    const track = carousel.querySelector('[data-showtime-track]');
+    const previous = carousel.querySelector('[data-showtime-previous]');
+    const next = carousel.querySelector('[data-showtime-next]');
+    const dateCount = track.querySelectorAll('.showtime-day').length;
+
+    const updateArrows = () => {
+        const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+        const hasOverflow = dateCount > 5 && maxScroll > 1;
+        previous.hidden = !hasOverflow || viewport.scrollLeft <= 1;
+        next.hidden = !hasOverflow || viewport.scrollLeft >= maxScroll - 1;
+    };
+
+    const scrollByDate = (direction) => {
+        viewport.scrollBy({ left: direction * viewport.clientWidth, behavior: 'smooth' });
+    };
+
+    previous.addEventListener('click', () => scrollByDate(-1));
+    next.addEventListener('click', () => scrollByDate(1));
+    viewport.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+});

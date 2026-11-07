@@ -18,8 +18,11 @@ class MovieController {
 
         if (!$movie) {
             http_response_code(404);
+            require __DIR__ . '/../views/404.php';
+            exit;
         }
 
+        $screenings = $this->movie->getScreeningsByMovieId($movieId);
         require __DIR__ . '/../views/movieDetails.php';
     }
 }
