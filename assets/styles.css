@@ -295,6 +295,80 @@ input:focus {
     text-align: center;
 }
 
+.showtimes {
+    display: block;
+    max-width: 950px;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+}
+
+.showtimes-heading {
+    margin-bottom: 1.5rem;
+}
+
+.showtimes-heading h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.showtimes > .empty-state {
+    margin: 0;
+}
+
+.showtime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.showtime-day {
+    min-width: 0;
+}
+
+.showtime-day h3 {
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+    font: bold 0.85rem Arial, sans-serif;
+    text-align: center;
+}
+
+.showtime-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.showtime-button {
+    display: flex;
+    min-height: 5.1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.4rem;
+    color: #102617;
+    background: #75c982;
+    text-align: center;
+}
+
+.showtime-button:hover {
+    color: #102617;
+    background: #9be0a4;
+}
+
+.showtime-auditorium,
+.showtime-meta {
+    font-size: 0.75rem;
+}
+
+.showtime-button strong {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.showtime-meta {
+    display: none;
+}
+
 .booking-list {
     display: grid;
     gap: 1rem;
@@ -407,6 +481,14 @@ footer .page-container {
 
     .detail-poster {
         max-width: 280px;
+    }
+
+    .showtimes {
+        padding: 1rem;
+    }
+
+    .showtime-grid {
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
     }
 
     .booking-card {
