@@ -44,24 +44,4 @@ class Movie {
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getScreeningSeats($screeningId) {
-        $query = "SELECT screenings.screeningId, screenings.movieId, screenings.startsAt,
-                         screenings.endsAt, screenings.ticketPrice,
-                         movies.title, auditoriums.name AS auditoriumName,
-                         seats.seatId, seats.rowLabel, seats.seatNumber,
-                         bookingSeats.seatId IS NOT NULL AS isBooked
-                  FROM screenings
-                  INNER JOIN movies ON movies.movieId = screenings.movieId
-                  INNER JOIN auditoriums ON auditoriums.auditoriumId = screenings.auditoriumId
-                  INNER JOIN seats ON seats.auditoriumId = screenings.auditoriumId
-                  LEFT JOIN bookingSeats
-                      ON bookingSeats.screeningId = screenings.screeningId
-                      AND bookingSeats.seatId = seats.seatId
-                  WHERE screenings.screeningId = :screeningId
-                  ORDER BY seats.rowLabel, seats.seatNumber";
-        $statement = $this->connection->prepare($query);
-        $statement->execute(['screeningId' => $screeningId]);
-
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
 }
