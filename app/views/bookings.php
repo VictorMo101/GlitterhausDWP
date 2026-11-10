@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'My bookings - Glimmerhaus Cinema';
+$pageTitle = 'My bookings - Glitterhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 ?>
 <section class="page-heading">

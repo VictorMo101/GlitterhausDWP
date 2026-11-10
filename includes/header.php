@@ -1,5 +1,5 @@
 <?php
-$pageTitle = $pageTitle ?? 'Glimmerhaus Cinema';
+$pageTitle = $pageTitle ?? 'Glitterhaus Cinema';
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +12,7 @@ $pageTitle = $pageTitle ?? 'Glimmerhaus Cinema';
 <body>
 <header>
     <div class="site-header">
-        <a class="brand" href="index.php?page=home">Glimmerhaus <span>Cinema</span></a>
+        <a class="brand" href="index.php?page=home">Glitterhaus <span>Cinema</span></a>
         <nav class="site-nav">
             <a href="index.php?page=home">Home</a>
         <?php if (logged_in()): ?>

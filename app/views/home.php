@@ -1,11 +1,11 @@
 <?php
-$pageTitle = 'Glimmerhaus Cinema';
+$pageTitle = 'Glitterhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 ?>
     <section class="page-heading">
         <p class="eyebrow">Your next night out</p>
         <h1>Now showing</h1>
-        <p>Discover something worth watching at Glimmerhaus Cinema.</p>
+        <p>Discover something worth watching at Glitterhaus Cinema.</p>
     </section>
     <?php if (empty($movies)): ?>
         <div class="empty-state">

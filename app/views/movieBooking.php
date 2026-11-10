@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Book ' . $screening['title'] . ' - Glimmerhaus Cinema';
+$pageTitle = 'Book ' . $screening['title'] . ' - Glitterhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 
 $seatsByRow = [];

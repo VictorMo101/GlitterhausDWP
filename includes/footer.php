@@ -1,7 +1,7 @@
 </main>
 <footer>
     <div class="page-container">
-        <p>&copy; <?= date('Y') ?> Glimmerhaus Cinema</p>
+        <p>&copy; <?= date('Y') ?> Glitterhaus Cinema</p>
     </div>
 </footer>
 </body>

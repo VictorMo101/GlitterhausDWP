@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Log in - Glimmerhaus Cinema';
+$pageTitle = 'Log in - Glitterhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 ?>
 <section class="form-card">

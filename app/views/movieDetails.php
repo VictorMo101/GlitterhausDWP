@@ -1,5 +1,5 @@
 <?php
-$pageTitle = $movie['title'] . ' - Glimmerhaus Cinema';
+$pageTitle = $movie['title'] . ' - Glitterhaus Cinema';
 require __DIR__ . '/../../includes/header.php';
 ?>
 <a class="back-link" href="index.php?page=home">&larr; Back to movies</a>

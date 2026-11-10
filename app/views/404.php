@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Page not found - Glimmerhaus Cinema';
+$pageTitle = 'Page not found - Glitterhaus Cinema';
 $message = $message ?? 'The page you requested could not be found.';
 require __DIR__ . '/../../includes/header.php';
 ?>
