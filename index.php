@@ -16,7 +16,9 @@ $about = new AboutController(new About($connection));
 $auth = new AuthController(new User($connection));
 $movies = new MovieController(new Movie($connection));
 $bookings = new BookingController(new Booking($connection));
-$admin = new AdminController(new User($connection));
+$admin = new AdminController([
+    'about' => new About($connection)
+]);
 
 $routes = [
     'about' => [$about, 'about'],

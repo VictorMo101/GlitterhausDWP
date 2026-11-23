@@ -324,6 +324,60 @@ input:focus {
     line-height: 1.7;
 }
 
+.admin-about-section {
+    margin-top: 2rem;
+}
+
+.admin-about-section h2 {
+    margin-bottom: 1rem;
+}
+
+.about-admin-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--surface);
+}
+
+form.about-admin-form {
+    max-width: 700px;
+}
+
+.about-admin-form textarea {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    padding: 0.75rem;
+    color: var(--ink);
+    background: var(--background);
+    font: 1rem Georgia, serif;
+}
+
+.about-admin-form textarea:focus {
+    outline: 2px solid var(--accent);
+    border-color: transparent;
+}
+
+form.about-delete-form {
+    display: block;
+}
+
+.button-danger {
+    color: #fff;
+    background: #9c2f2f;
+}
+
+.button-danger:hover {
+    color: #fff;
+    background: #b83b3b;
+}
+
 .showtimes {
     display: block;
     max-width: 950px;
