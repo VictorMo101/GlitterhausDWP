@@ -18,6 +18,7 @@ class AuthController {
             if ($foundUser && password_verify($password, $foundUser['passwordHash'])) {
                 $_SESSION['user_id'] = $foundUser['userId'];
                 $_SESSION['user'] = $foundUser['username'];
+                $_SESSION['is_admin'] = (bool) $foundUser['isAdmin'];
                 redirect_to('index.php?page=home');
             }
 

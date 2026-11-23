@@ -20,7 +20,7 @@ class User {
     }
 
     public function findByUsername($username) {
-        $query = "SELECT userId, username, passwordHash
+        $query = "SELECT userId, username, passwordHash, isAdmin
                   FROM users WHERE username = :username LIMIT 1";
         $statement = $this->connection->prepare($query);
         $statement->execute([':username' => $username]);
