@@ -8,12 +8,15 @@ require_once __DIR__ . "/app/models/Booking.php";
 require_once __DIR__ . "/app/controllers/AuthController.php";
 require_once __DIR__ . "/app/controllers/MovieController.php";
 require_once __DIR__ . "/app/controllers/BookingController.php";
+require_once __DIR__ . "/app/controllers/PageController.php";
 
+$pages = new PageController();
 $auth = new AuthController(new User($connection));
 $movies = new MovieController(new Movie($connection));
 $bookings = new BookingController(new Booking($connection));
 
 $routes = [
+    'about' => [$pages, 'about'],
     'home' => [$movies, 'home'],
     'movieDetails' => [$movies, 'movieDetails'],
     'movieBooking' => [$bookings, 'movieBooking'],
