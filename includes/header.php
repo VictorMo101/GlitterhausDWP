@@ -15,6 +15,7 @@ $pageTitle = $pageTitle ?? 'Glitterhaus Cinema';
         <a class="brand" href="index.php?page=home">Glitterhaus <span>Cinema</span></a>
         <nav class="site-nav">
             <a href="index.php?page=home">Home</a>
+            <a href="index.php?page=about">About</a>
         <?php if (logged_in()): ?>
             <a href="index.php?page=bookings">My bookings</a>
             <span>Welcome, <?= htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8') ?></span>
@@ -24,6 +25,9 @@ $pageTitle = $pageTitle ?? 'Glitterhaus Cinema';
         <?php else: ?>
             <a href="index.php?page=login">Log in</a>
             <a class="button button-small" href="index.php?page=register">Register</a>
+        <?php endif; ?>
+                <?php if (is_admin()) : ?>
+            <a href="index.php?page=admin">Admin</a>
         <?php endif; ?>
         </nav>
     </div>

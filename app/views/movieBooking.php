@@ -29,22 +29,7 @@ foreach ($seats as $seat) {
           data-ticket-price="<?= htmlspecialchars($screening['ticketPrice'], ENT_QUOTES, 'UTF-8') ?>">
         <input type="hidden" name="screeningId" value="<?= (int) $screening['screeningId'] ?>">
         <div class="screen-label">Screen</div>
-        <div class="booking-layout">
-            <aside class="seat-selection-panel">
-                <h2>Select tickets</h2>
-                <div class="ticket-counter">
-                    <div>
-                        <strong>Seats</strong>
-                        <span data-selected-seats>0 selected</span>
-                    </div>
-                    <div class="counter-controls">
-                        <button class="seat-control" type="button" data-seat-minus aria-label="Remove a seat">-</button>
-                        <button class="seat-control" type="button" data-seat-plus aria-label="Add a seat">+</button>
-                    </div>
-                </div>
-                <p class="selection-total"><strong>Total</strong> <span data-total-price>0.00</span></p>
-                <button class="button" type="submit" data-confirm-booking disabled>Confirm booking</button>
-            </aside>
+
             <div class="seat-map">
                 <?php foreach ($seatsByRow as $rowLabel => $rowSeats): ?>
                     <div class="seat-row">
@@ -62,7 +47,22 @@ foreach ($seats as $seat) {
                     </div>
                 <?php endforeach; ?>
             </div>
-        </div>
+
+         <aside class="seat-selection-panel">
+                <h2>Select tickets</h2>
+                <div class="ticket-counter">
+                    <div>
+                        <strong>Seats</strong>
+                        <span data-selected-seats>0 selected</span>
+                    </div>
+                    <div class="counter-controls">
+                        <button class="seat-control" type="button" data-seat-minus aria-label="Remove a seat">-</button>
+                        <button class="seat-control" type="button" data-seat-plus aria-label="Add a seat">+</button>
+                    </div>
+                </div>
+                <p class="selection-total"><strong>Total</strong> <span data-total-price>0.00</span></p>
+                <button class="button" type="submit" data-confirm-booking disabled>Confirm booking</button>
+            </aside>
     </form>
 </section>
 <script src="assets/seatBooking.js" defer></script>

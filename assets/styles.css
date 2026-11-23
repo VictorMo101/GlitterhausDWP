@@ -301,6 +301,83 @@ input:focus {
     text-align: center;
 }
 
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.about-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: rgba(33, 30, 29, 0.8);
+}
+
+.about-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.about-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.admin-about-section {
+    margin-top: 2rem;
+}
+
+.admin-about-section h2 {
+    margin-bottom: 1rem;
+}
+
+.about-admin-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--surface);
+}
+
+form.about-admin-form {
+    max-width: 700px;
+}
+
+.about-admin-form textarea {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    padding: 0.75rem;
+    color: var(--ink);
+    background: var(--background);
+    font: 1rem Georgia, serif;
+}
+
+.about-admin-form textarea:focus {
+    outline: 2px solid var(--accent);
+    border-color: transparent;
+}
+
+form.about-delete-form {
+    display: block;
+}
+
+.button-danger {
+    color: #fff;
+    background: #9c2f2f;
+}
+
+.button-danger:hover {
+    color: #fff;
+    background: #b83b3b;
+}
+
 .showtimes {
     display: block;
     max-width: 950px;
@@ -544,13 +621,6 @@ form.seat-booking-form {
     margin-bottom: 1rem;
 }
 
-.booking-layout {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-}
-
 .seat-selection-panel {
     border: 1px solid var(--border);
     border-radius: 0.75rem;
@@ -759,6 +829,10 @@ footer .page-container {
         padding-top: 2.5rem;
     }
 
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
     .detail-card {
         grid-template-columns: 1fr;
         padding: 1rem;
@@ -802,11 +876,7 @@ footer .page-container {
         padding-right: 0.35rem;
         padding-left: 0.35rem;
     }
-
-    .booking-layout {
-        grid-template-columns: 1fr;
-    }
-
+    
     .booking-card {
         grid-template-columns: 60px 1fr;
         gap: 1rem;
