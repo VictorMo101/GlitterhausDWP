@@ -636,3 +636,21 @@ INSERT INTO bookingSeats (bookingSeatId, bookingId, screeningId, seatId, auditor
 (115, 44, 82, 119, 4, 11.00),
 (116, 45, 75, 1, 1, 11.50),
 (117, 45, 75, 2, 1, 11.50);
+
+INSERT INTO about (title, content, displayOrder)
+VALUES
+(
+    'Who We Are',
+    'GlitterHaus is a modern cinema experience...',
+    1
+),
+(
+    'Our Mission',
+    'Our mission is to provide an unforgettable...',
+    2
+),
+(
+    'Our Cinemas',
+    'We offer a selection of screening rooms...',
+    3
+);

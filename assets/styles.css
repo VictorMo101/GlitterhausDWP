@@ -301,6 +301,29 @@ input:focus {
     text-align: center;
 }
 
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.about-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: rgba(33, 30, 29, 0.8);
+}
+
+.about-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.about-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
 .showtimes {
     display: block;
     max-width: 950px;
@@ -757,6 +780,10 @@ footer .page-container {
 
     .page-container {
         padding-top: 2.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
     }
 
     .detail-card {

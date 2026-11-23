@@ -5,18 +5,19 @@ require_once __DIR__ . "/includes/functions.php";
 require_once __DIR__ . "/app/models/User.php";
 require_once __DIR__ . "/app/models/Movie.php";
 require_once __DIR__ . "/app/models/Booking.php";
+require_once __DIR__ . "/app/models/About.php";
 require_once __DIR__ . "/app/controllers/AuthController.php";
 require_once __DIR__ . "/app/controllers/MovieController.php";
 require_once __DIR__ . "/app/controllers/BookingController.php";
-require_once __DIR__ . "/app/controllers/PageController.php";
+require_once __DIR__ . "/app/controllers/AboutController.php";
 
-$pages = new PageController();
+$about = new AboutController(new About($connection));
 $auth = new AuthController(new User($connection));
 $movies = new MovieController(new Movie($connection));
 $bookings = new BookingController(new Booking($connection));
 
 $routes = [
-    'about' => [$pages, 'about'],
+    'about' => [$about, 'about'],
     'home' => [$movies, 'home'],
     'movieDetails' => [$movies, 'movieDetails'],
     'movieBooking' => [$bookings, 'movieBooking'],
