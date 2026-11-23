@@ -138,3 +138,11 @@ CREATE TABLE bookingSeats (
     FOREIGN KEY (screeningId, auditoriumId) REFERENCES screenings(screeningId, auditoriumId) ON DELETE RESTRICT,
     FOREIGN KEY (seatId, auditoriumId) REFERENCES seats(seatId, auditoriumId) ON DELETE RESTRICT
 );
+
+CREATE TABLE about (
+    aboutId INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    content TEXT NOT NULL,
+    displayOrder INT NOT NULL DEFAULT 0,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
