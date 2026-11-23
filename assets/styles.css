@@ -621,13 +621,6 @@ form.seat-booking-form {
     margin-bottom: 1rem;
 }
 
-.booking-layout {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-}
-
 .seat-selection-panel {
     border: 1px solid var(--border);
     border-radius: 0.75rem;
@@ -883,11 +876,7 @@ footer .page-container {
         padding-right: 0.35rem;
         padding-left: 0.35rem;
     }
-
-    .booking-layout {
-        grid-template-columns: 1fr;
-    }
-
+    
     .booking-card {
         grid-template-columns: 60px 1fr;
         gap: 1rem;
