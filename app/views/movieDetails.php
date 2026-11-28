@@ -1,6 +1,6 @@
 <?php
 $pageTitle = $movie['title'] . ' - Glitterhaus Cinema';
-require __DIR__ . '/../../includes/header.php';
+require __DIR__ . '/partials/header.php';
 ?>
 <a class="back-link" href="index.php?page=home">&larr; Back to movies</a>
 <article class="detail-card">
@@ -66,4 +66,4 @@ require __DIR__ . '/../../includes/header.php';
     <?php endif; ?>
 </section>
 <script src="assets/showtimes.js" defer></script>
-<?php require __DIR__ . '/../../includes/footer.php'; ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>

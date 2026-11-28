@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Log in - Glitterhaus Cinema';
-require __DIR__ . '/../../includes/header.php';
+require __DIR__ . '/partials/header.php';
 ?>
 <section class="form-card">
     <p class="eyebrow">Welcome back</p>
@@ -18,4 +18,4 @@ require __DIR__ . '/../../includes/header.php';
     <p class="form-footer">New here? <a href="index.php?page=register">Create an account</a></p>
 </section>
 
-<?php require __DIR__ . '/../../includes/footer.php'; ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>

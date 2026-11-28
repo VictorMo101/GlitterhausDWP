@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Book ' . $screening['title'] . ' - Glitterhaus Cinema';
-require __DIR__ . '/../../includes/header.php';
+require __DIR__ . '/partials/header.php';
 
 $seatsByRow = [];
 foreach ($seats as $seat) {
@@ -66,4 +66,4 @@ foreach ($seats as $seat) {
     </form>
 </section>
 <script src="assets/seatBooking.js" defer></script>
-<?php require __DIR__ . '/../../includes/footer.php'; ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Manage about - Glitterhaus Cinema';
-require __DIR__ . '/../../../includes/header.php';
+require __DIR__ . '/../partials/header.php';
 ?>
 <section class="page-heading">
     <a href="index.php?page=admin" class="button-small">↩ Back to Admin Dashboard</a>
@@ -80,4 +80,4 @@ require __DIR__ . '/../../../includes/header.php';
         <?php endforeach; ?>
     <?php endif; ?>
 </section>
-<?php require __DIR__ . '/../../../includes/footer.php'; ?>
+<?php require __DIR__ . '/../partials/footer.php'; ?>

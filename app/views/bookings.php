@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'My bookings - Glitterhaus Cinema';
-require __DIR__ . '/../../includes/header.php';
+require __DIR__ . '/partials/header.php';
 ?>
 <section class="page-heading">
     <p class="eyebrow">Your cinema plans</p>
@@ -54,4 +54,4 @@ require __DIR__ . '/../../includes/header.php';
         <?php endforeach; ?>
     </section>
 <?php endif; ?>
-<?php require __DIR__ . '/../../includes/footer.php'; ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>

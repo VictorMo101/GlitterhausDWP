@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/includes/session.php";
-require_once __DIR__ . "/includes/connection.php";
-require_once __DIR__ . "/includes/functions.php";
+require_once __DIR__ . "/app/config/session.php";
+require_once __DIR__ . "/app/config/connection.php";
+require_once __DIR__ . "/app/helpers/functions.php";
 require_once __DIR__ . "/app/models/User.php";
 require_once __DIR__ . "/app/models/Movie.php";
 require_once __DIR__ . "/app/models/Booking.php";
