@@ -146,3 +146,36 @@ CREATE TABLE about (
     displayOrder INT NOT NULL DEFAULT 0,
     updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+CREATE TABLE news (
+    newsId INT PRIMARY KEY AUTO_INCREMENT,
+    newsTitle VARCHAR(150) NOT NULL,
+    newsText TEXT NOT NULL,
+    newsAuthor VARCHAR(100) NOT NULL,
+    newsImage VARCHAR(255),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE openingHours (
+    openingHoursId INT AUTO_INCREMENT PRIMARY KEY,
+    dayOfTheWeek varchar(50) NOT NULL UNIQUE,
+    openTime TIME,
+    closeTime TIME
+);
+
+INSERT INTO openingHours (dayOfTheWeek)
+VALUES
+('Monday'),
+('Tuesday'),
+('Wednesday'),
+('Thursday'),
+('Friday'),
+('Saturday'),
+('Sunday');
+
+CREATE TABLE contactInfo (
+    contactInfoId INT AUTO_INCREMENT PRIMARY KEY,
+    address VARCHAR(255) NOT NULL,
+    phoneNumber VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
